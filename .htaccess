@@ -1,0 +1,4 @@
+<IfModule dir_module>
+    DirectoryIndex index.php index.html
+    php_flag display_errors off
+</IfModule>
