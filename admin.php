@@ -1,3 +1,9 @@
+<?php
+session_start();
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,8 +19,11 @@
       <h1 class="form__title">Вход в админку</h1>
       <input type="text" name="login" placeholder="Введите логин" required>
       <input type="password" name="password" placeholder="Введите пароль" required>
-      <?php session_start()?>
-      <?php if (!$_SESSION['isAuth']) { echo "<p>неверно введен логин или пароль</p>"; } ?>
+      <?php if (isset($_SESSION['isAuth'])):?>
+        <?php if ($_SESSION['isAuth'] == false):?>
+          <?php echo "<p>неверно введен логин или пароль</p>";?>
+        <?php endif?>
+      <?php endif?>
       <button type="submit">Войти</button>
     </form>
     </div>

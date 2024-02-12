@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <link rel="stylesheet" href="css/style.min.css">
-  <title>Document</title>
+  <title>Home page</title>
 </head>
 <body>
   <header class="header">
@@ -62,36 +62,9 @@
         </div>
       </div>
     </div>
-    <section class="about" id="about">
-      <div class="container">
-        <h1 class="about__title">Learn about us</h1>
-        <h4 class="about__subtitle subtitle">It’s short title here</h4>
-      </div>
-      <div class="container-one">
-        <div class="about__inner">
-          <div class="about__img-box">
-            <a href="images/about-img.jpg" data-fancybox><img class="about__img" src="images/about-img.jpg" alt=""></a>
-          </div>
-          <div class="about__content">
-            <p class="about__text">
-              Lorem Ipsum has been the industry's standard dummy text ever to since the 1500s, type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting. type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting
-            </p>
-            <button class="about__btn">More about us</button>
-            <div class="about__partners">
-              <div class="about__partners-img-box">
-                <img class="about__partners-img" src="images/amazon.png" alt="">
-              </div>
-              <div class="about__partners-img-box">
-                <img class="about__partners-img" src="images/alibaba.png" alt="">
-              </div>
-              <div class="about__partners-img-box">
-                <img class="about__partners-img" src="images/circles.png" alt="">
-              </div>  
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    
+    <?php require_once "./sections/about.php"?>
+
     <section class="services" id="service">
       <div class="container">
         <h1 class="services__title">We provide that service</h1>

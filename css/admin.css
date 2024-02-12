@@ -89,7 +89,7 @@ button:hover {
   flex-grow: 1;
   max-width: 330px;
   height: 100vh;
-  background-color: rgb(30, 119, 119);
+  background-color: rgb(43 43 43);
   padding: 30px 15px;
 }
 
@@ -105,5 +105,68 @@ button:hover {
   display: flex;
   gap: 5px;
   align-items: center;
+}
 
+.admin-page__sideba-top-links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.admin-page__logout-link {
+  padding: 3px 5px;
+  color: #ff0000;
+  border-radius: 5px;
+  border: 2px solid #ff0000;
+  text-decoration: none;
+  font-weight: 400;
+  transition: .2s ease-in;
+}
+
+.admin-page__logout-link:hover {
+  background-color: #FFF;
+}
+
+.sidebar__title {
+  color: #fff;
+  font-size: 22px;
+  font-weight: 400;
+}
+
+.sidebar__links-box {
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.sidebar__link {
+  text-decoration: none;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3px 5px;
+  margin-bottom: 10px;
+}
+
+.sidebar__link--active {
+  color: #5269E0;
+}
+
+.sidebar__link--active svg path {
+  fill: #5269E0;
+}
+
+.form-box {
+  max-width: 800px;
+}
+
+.input-box__title {
+  font-size: 25px;
+  margin: 20px 0;
+}
+
+.form-btn {
+  display: inline-block;
+  margin-top: 20px;
 }
