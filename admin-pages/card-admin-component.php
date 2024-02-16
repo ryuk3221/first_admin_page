@@ -2,15 +2,18 @@
   require '../functions/connect.php';
   session_start();
 
-  //Выполняю запрос для получаения данных секии  баннера
-  $sql = "SELECT * FROM about_section";
-  $result = $connect->query($sql);
-
-  $row = $result->fetch_assoc();
 
   //Записываю в сессию индекс активной ссылки, по этому индексу буду вешать активынй класс ссылкам в сайдбаре
   //P.s. не придумал способа лучше как это реализовать
-  $_SESSION['current-link'] = 2;
+  unset($_SESSION['current-link']);
+  $_SESSION['current-card-link'] = $_GET['item'];
+  
+  $card_id = $_GET['item'];
+
+  //Получаю с базы данных нудный товар по id передающийся get параметром
+  $get_card_sql = "SELECT * FROM goods WHERE id='{$card_id}'";
+  $card_data = $connect->query($get_card_sql);
+  $card_data = $card_data->fetch_assoc();
   
 ?>
 <!DOCTYPE html>
@@ -32,22 +35,27 @@
       <?php require './sidebar.php'?>
 
       <div class="admin-page__content">
-        <h1 class="admin-page__title">Редактированиt секции "О нас"</h1>
+        <h1 class="admin-page__title">Редактированиt карточки товара "<?php echo $card_data['title']?>"</h1>
         <div class="form-box">
-          <form action="../admin-editor/about-edit.php" method="POST" name="about">
+          <form action="../admin-editor/card-update.php" method="POST" name="about">
+            <input style="display: none;" type="text" name="id" value='<?php echo $card_data['id']?>'>
             <div class="input-box">
-              <h5 class="input-box__title">Заголовок</h5>
-              <input type="text" name="title" value='<?php echo $row["title"]?>'>
+              <h5 class="input-box__title">Название товара</h5>
+              <input type="text" name="title" value='<?php echo $card_data['title']?>'>
             </div>
             <div class="input-box">
-              <h5 class="input-box__title">Подзаголовок</h5>
-              <input type="text" name="sub_title" value='<?php echo $row["sub_title"]?>'>
+              <h5 class="input-box__title">Цена</h5>
+              <input type="text" name="price" value='<?php echo $card_data['price']?>'>
             </div>
             <div class="input-box">
               <h5 class="input-box__title">Текст</h5>
-              <input type="text" name="text" value='<?php echo $row["text"]?>'>
+              <input type="text" name="text" value='<?php echo $card_data['text']?>'>
             </div>
             <button class="form-btn" type="submit">Отправить</button>
+          </form>
+          <form action="../admin-editor/card-delete.php" method="post">
+            <input style="display: none;" type="text" name="id" value='<?php echo $card_data['id']?>'>
+            <button class="btn-remove-card">Удалить</button>
           </form>
         </div>
       </div> 

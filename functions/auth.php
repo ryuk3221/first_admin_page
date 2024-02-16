@@ -17,7 +17,7 @@ if ($row['id'] > 0 && password_verify($user_password, $row['password'])) {
   //Обозначаю в сессии что пользователь авторизован
   $_SESSION['isAuth'] = true;
   //Направляю на страницу админ панели
-  header('Location:../admin-page.php');
+  header('Location:../admin-pages/admin-page.php');
 } 
 else {
   $_SESSION['isAuth'] = false;

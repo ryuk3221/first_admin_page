@@ -91,6 +91,7 @@ button:hover {
   height: 100vh;
   background-color: rgb(43 43 43);
   padding: 30px 15px;
+  overflow-y: auto;
 }
 
 .admin-page__content {
@@ -111,7 +112,7 @@ button:hover {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
 }
 
 .admin-page__logout-link {
@@ -132,11 +133,13 @@ button:hover {
   color: #fff;
   font-size: 22px;
   font-weight: 400;
+  margin-bottom: 20px;
 }
 
 .sidebar__links-box {
   margin-left: 15px;
   margin-right: 15px;
+  margin-bottom: 20px;
 }
 
 .sidebar__link {
@@ -169,4 +172,58 @@ button:hover {
 .form-btn {
   display: inline-block;
   margin-top: 20px;
+}
+
+.admin-page__sidebar::-webkit-scrollbar {
+  width: 10px;
+}
+
+.admin-page__sidebar::-webkit-scrollbar-track {
+  background-color: rgb(0, 0, 0);
+}
+
+.admin-page__sidebar::-webkit-scrollbar-thumb {
+  background-color: #5269E0;
+  border-radius: 5px;
+}
+
+.sidebar__subtitle {
+  margin: 0;
+  color: #fff;
+  font-weight: 500;
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.sidebar__cards-links-box {
+  padding-right: 15px;
+}
+
+.btn-remove-card {
+  color: #ff0000;
+  border-color: #ff0000;
+  transition: .25s ease-in-out;
+  display: inline-block;
+  margin-top: 20px;
+}
+
+.btn-remove-card:hover {
+  background-color: #ff0000;
+  color: #fff;
+}
+
+.sidebar__subtitle {
+  display: flex;
+}
+
+.add-card {
+  font-size: 30px;
+  color: #fff;
+  font-weight: 400;
+  text-decoration: none;
+  line-height: 1;
+  display: inline-block;
+  width: 20px;
+  margin-left: auto;
+  margin-right: 15px;
 }
