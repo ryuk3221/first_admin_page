@@ -34,7 +34,7 @@
       <div class="admin-page__content">
         <h1 class="admin-page__title">Редактированиt секции "О нас"</h1>
         <div class="form-box">
-          <form action="../admin-editor/about-edit.php" method="POST" name="about">
+          <form action="../admin-editor/about-edit.php" method="POST" name="about" enctype="multipart/form-data">
             <div class="input-box">
               <h5 class="input-box__title">Заголовок</h5>
               <input type="text" name="title" value='<?php echo $row["title"]?>'>
@@ -46,6 +46,14 @@
             <div class="input-box">
               <h5 class="input-box__title">Текст</h5>
               <input type="text" name="text" value='<?php echo $row["text"]?>'>
+            </div>
+            <div class="input-box">
+              <h5 class="input-box__title">Картинка</h5>
+              <input type="file" name="img">
+            </div>
+            <div class="current-img-box">
+              Текущая картинка:
+              <img src='../images/<?php echo $row['file_name']?>'>
             </div>
             <button class="form-btn" type="submit">Отправить</button>
           </form>

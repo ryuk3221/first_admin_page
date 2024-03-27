@@ -27,7 +27,7 @@ unset($_SESSION['current-card-link']);
       <div class="admin-page__content">
         <h1 class="admin-page__title">Добавление карточки</h1>
         <div class="form-box">
-          <form action="../admin-editor/card-add.php" method="POST">
+          <form action="../admin-editor/card-add.php" method="POST" enctype="multipart/form-data">
             <div class="input-box">
               <h5 class="input-box__title">Название товара</h5>
               <input type="text" name="title">
@@ -40,6 +40,7 @@ unset($_SESSION['current-card-link']);
               <h5 class="input-box__title">Текст</h5>
               <input type="text" name="text">
             </div>
+            <input type="file" name="card-img">
             <button class="form-btn" type="submit">Отправить</button>
           </form>
         </div>

@@ -10,9 +10,10 @@
   
   $card_id = $_GET['item'];
 
-  //Получаю с базы данных нудный товар по id передающийся get параметром
+  //Получаю с базы данных нужный товар по id передающийся get параметром
   $get_card_sql = "SELECT * FROM goods WHERE id='{$card_id}'";
   $card_data = $connect->query($get_card_sql);
+  //Получил данные в виде ассоциативного массива
   $card_data = $card_data->fetch_assoc();
   
 ?>
@@ -37,7 +38,9 @@
       <div class="admin-page__content">
         <h1 class="admin-page__title">Редактированиt карточки товара "<?php echo $card_data['title']?>"</h1>
         <div class="form-box">
-          <form action="../admin-editor/card-update.php" method="POST" name="about">
+
+          <!-- Данная форма отправляется для  редактирования существующей -->
+          <form action="../admin-editor/card-update.php" method="POST" name="about" enctype="multipart/form-data">
             <input style="display: none;" type="text" name="id" value='<?php echo $card_data['id']?>'>
             <div class="input-box">
               <h5 class="input-box__title">Название товара</h5>
@@ -51,8 +54,18 @@
               <h5 class="input-box__title">Текст</h5>
               <input type="text" name="text" value='<?php echo $card_data['text']?>'>
             </div>
-            <button class="form-btn" type="submit">Отправить</button>
+            <div class="input-box">
+              <h5 class="input-box__title">Текущая картинка</h5>
+              <div class="current-img-box">
+                <img class="card-current-img" src='../images/<?php echo $card_data['file_name']?>' alt="">
+                <span>Изменить картинку:</span>
+                <input class="current-img-input" type="file" name="img" value='<?php echo $card_data['id']?>'>
+              </div>
+            </div>
+            <button class="form-btn" type="submit">Сохранить</button>
           </form>
+
+          <!-- Данная форма отправляется для удаления товара по id  -->
           <form action="../admin-editor/card-delete.php" method="post">
             <input style="display: none;" type="text" name="id" value='<?php echo $card_data['id']?>'>
             <button class="btn-remove-card">Удалить</button>

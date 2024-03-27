@@ -87,15 +87,20 @@ button:hover {
 
 .admin-page__sidebar {
   flex-grow: 1;
-  max-width: 330px;
+  width: 330px;
   height: 100vh;
   background-color: rgb(43 43 43);
   padding: 30px 15px;
   overflow-y: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
 }
 
 .admin-page__content {
   flex-grow: 1;
+  margin-left: 350px;
 }
 
 .admin-page__home-link {
@@ -227,3 +232,14 @@ button:hover {
   margin-left: auto;
   margin-right: 15px;
 }
+
+.current-img-box {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.card-current-img {
+  width: 300px;
+}
+

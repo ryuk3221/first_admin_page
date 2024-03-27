@@ -14,7 +14,7 @@
       <div class="container-one">
         <div class="about__inner">
           <div class="about__img-box">
-            <a href="images/about-img.jpg" data-fancybox><img class="about__img" src="images/about-img.jpg" alt=""></a>
+            <a href="images/about-img.jpg" data-fancybox><img class="about__img" src='images/<?php echo $row['file_name']?>' alt=""></a>
           </div>
           <div class="about__content">
             <p class="about__text">

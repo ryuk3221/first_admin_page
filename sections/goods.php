@@ -37,7 +37,7 @@
             <div class="catalog__item mix chair" >
               <a href="images/item1.jpg" data-fancybox="gallary1">
                 <div class="catalog__img-box">
-                  <img class="catalog__item-img" src="images/item1.jpg" alt="">
+                  <img class="catalog__item-img" src='images/<?php echo $row['file_name']?>' alt="">
                 </div>
               </a>
               <div class="catalog__item-head">
